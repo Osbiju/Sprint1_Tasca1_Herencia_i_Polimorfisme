@@ -121,6 +121,7 @@ public class Main {
 
         System.out.println("Introdueix el DNI del redactor per a introduir.li una noticia");
         dni = entrada.next();
+        entrada.nextLine();//para limpiar el buffer
 
         for (Redactor redactor : redactors) {
             if (redactor.getDni().equalsIgnoreCase(dni)) {
@@ -133,20 +134,19 @@ public class Main {
                 tipus = entrada.nextInt();
                 switch (tipus) {
                     case 1:
-                        System.out.println("Introdueix les dades:" +
-                                "\nTitular: ");
-                        String titularFut = entrada.nextLine();
-                        entrada.nextLine();
-                        System.out.println("Competicio: ");
-                        String competicioFut = entrada.nextLine();
-                        System.out.println("Club: ");
-                        String clubFut = entrada.nextLine();
-                        System.out.println("Jugador: ");
-                        String jugadorFut = entrada.nextLine();
-                        Futbol noticiaFutbol = new Futbol(titularFut, competicioFut, clubFut, jugadorFut);
-                        redactor.asignarNoticia(noticiaFutbol);
-                        resposta = "Noticia de futbol afegida correctament al redactor amb dni " + dni;
-                        break;
+                            System.out.println("Introdueix un titular: ");
+                            String titularFut = entrada.nextLine();
+                            entrada.nextLine();
+                            System.out.println("Competicio: ");
+                            String competicioFut = entrada.nextLine();
+                            System.out.println("Club: ");
+                            String clubFut = entrada.nextLine();
+                            System.out.println("Jugador: ");
+                            String jugadorFut = entrada.nextLine();
+                            Futbol noticiaFutbol = new Futbol(titularFut, competicioFut, clubFut, jugadorFut);
+                            redactor.asignarNoticia(noticiaFutbol);
+                            resposta = "Noticia de futbol afegida correctament al redactor amb dni " + dni;
+                            break;
                     case 2:
                         System.out.println("Introdueix les dades:" +
                                 "\nTitular: ");

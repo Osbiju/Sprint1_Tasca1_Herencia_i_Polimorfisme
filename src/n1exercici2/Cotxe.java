@@ -2,7 +2,7 @@ package n1exercici2;
 
 public class Cotxe {
     private static final String marca = "SEAT";
-    private static String model = "Ibiza";
+    private static String model = "Ibiza";//aquest es podria inicialitzar al constructor
     private final int potencia;
 
     public Cotxe(int potencia) {

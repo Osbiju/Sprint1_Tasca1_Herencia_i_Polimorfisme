@@ -1,6 +1,6 @@
 package n2exercici1;
 
-public class Smartphone extends Telefon implements Camara {
+public class Smartphone extends Telefon implements Camara, Rellotge{
 
     public Smartphone(String marca, String model) {
         super(marca, model);
