@@ -48,27 +48,42 @@ public class Basquet extends Noticia {
     //metodes generals
     public double calcularPreuNoticia() {
         int preuInicial = 250;
-        if (getCompeticio().equalsIgnoreCase("Eurolliga")) {
-            preuInicial += 75;
+
+        if (this.competicio != null) {
+            if (getCompeticio().equalsIgnoreCase("Eurolliga")) {
+                preuInicial += 75;
+            }
         }
-        if (getClub().equalsIgnoreCase("Barça") || getClub().equalsIgnoreCase("Madrid")) {
-            preuInicial += 75;
+
+        if (this.club != null) {
+            if (getClub().equalsIgnoreCase("Barça") || getClub().equalsIgnoreCase("Madrid")) {
+                preuInicial += 75;
+            }
         }
+
         return preuInicial;
     }
 
     @Override
     public int calcularPuntuacio() {
         int punts = 4;
-        if (getCompeticio().equalsIgnoreCase("Eurolliga")) {
-            punts += 3;
+
+        if (getCompeticio() != null) {
+            if (getCompeticio().equalsIgnoreCase("Eurolliga")) {
+                punts += 3;
+            }
+
+            if (getCompeticio().equalsIgnoreCase("ACB")) {
+                punts += 2;
+            }
         }
-        if (getCompeticio().equalsIgnoreCase("ACB")) {
-            punts += 2;
+
+        if (getClub() != null) {
+            if (getClub().equalsIgnoreCase("Barça") || getClub().equalsIgnoreCase("Madrid")) {
+                punts += 1;
+            }
         }
-        if (getClub().equalsIgnoreCase("Barça") || getClub().equalsIgnoreCase("Madrid")) {
-            punts += 1;
-        }
+
         return punts;
     }
 

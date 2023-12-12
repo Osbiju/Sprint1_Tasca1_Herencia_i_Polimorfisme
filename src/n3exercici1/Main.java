@@ -5,20 +5,13 @@ import java.util.Scanner;
 
 public class Main {
     private static ArrayList<Redactor> redactors;
-    //    private static ArrayList<Noticia> noticies; NO FA FALTA!!!
+
     static Scanner entrada = new Scanner(System.in);
 
     public static void main(String[] args) {
 
 
-        //PROBA DE FUNCIONAMENT DE COSES
-        /*Futbol noticia1 = new Futbol(" CAMPIONS!!!El barça gana al madrid por 2 a 1",5,400,"Lliga de campions","barça","benzema");
-        System.out.println(noticia1.toString());*/
-
-        //ARRAYLIST DE REDACTORS¿?¿??¿
-        redactors = new ArrayList<Redactor>();//NO ENTENC AIXO
-
-//        noticies = new ArrayList<Noticia>(); FOORA PQ SHA ELIMINAT ADALT
+        redactors = new ArrayList<Redactor>();
 
         int opcio = 0;
         String resposta = "";
@@ -92,17 +85,6 @@ public class Main {
         System.out.println("Introdueix el nom DNI del redactor a eliminar:");
         dni = entrada.next();
 
-//        for (int i = 0; i < redactors.size() /*&& !trobat*/; i++) {
-//            if (redactors.get(i).getDni().equals(dni)) {
-//                redactors.remove(i);
-//                //trobat = true;
-//                resposta = "Redactor amb DNI: " + dni + ", ha sigut eliminat correctament";
-//
-//            }
-//            if (!trobat) { //FUERA O DENTRO DEL FOR????
-//                resposta = "Redactor no trobat";
-//            }
-//        }
         for (Redactor redactor : redactors) {
             if (redactor.getDni().equals(dni)) {
                 int index = redactors.indexOf(redactor);
@@ -205,17 +187,6 @@ public class Main {
         }
         return resposta;
 
-        /*for (int i = 0; i < redactors.size(); i++){ //ES MEJOR HACER EL FOR O FOREACH? SABREMOS CUANTAS VECES NECESITA RECORRER?
-            if (redactors.get(i).getDni().equalsIgnoreCase(dni)){
-               introduirNoticia();
-               trobat = true;
-               resposta = "Al redactor amb DNI " + dni + ", se li ha assignat la noticia correctament";
-            }
-            if(!trobat){
-                resposta = "No s'ha trobat redactor amb el dni " + dni;
-            }
-        }
-        return resposta;*/
     }
 
     private static String eliminarNoticia() {

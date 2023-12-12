@@ -29,18 +29,26 @@ public class F1 extends Noticia {
     //metodes generals
     public double calcularPreuNoticia() {
         int preuInicial = 100;
-        if (getEscuderia().equalsIgnoreCase("Ferrarri") || getEscuderia().equalsIgnoreCase("Mercedes")) {
-            preuInicial += 50;
+
+        if (this.escuderia != null) {
+            if (getEscuderia().equalsIgnoreCase("Ferrarri") || getEscuderia().equalsIgnoreCase("Mercedes")) {
+                preuInicial += 50;
+            }
         }
+
         return preuInicial;
     }
 
     @Override
     public int calcularPuntuacio() {
         int punts = 4;
-        if (getEscuderia().equalsIgnoreCase("Ferrarri") || getEscuderia().equalsIgnoreCase("Mercedes")) {
-            punts += 2;
+
+        if (getEscuderia() != null) {
+            if (getEscuderia().equalsIgnoreCase("Ferrarri") || getEscuderia().equalsIgnoreCase("Mercedes")) {
+                punts += 2;
+            }
         }
+
         return punts;
     }
 

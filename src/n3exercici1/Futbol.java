@@ -52,33 +52,52 @@ package n3exercici1;
 
             int preuInicial = 300;
 
-            if (getCompeticio().equalsIgnoreCase("Lliga de campions")) {
-                preuInicial += 100;
+            if (this.competicio != null) {
+                if (getCompeticio().equalsIgnoreCase("Lliga de campions")) {
+                    preuInicial += 100;
+                }
             }
-            if (getClub().equalsIgnoreCase("Barça") || getClub().equalsIgnoreCase("Madrid")) {
-                preuInicial += 100;
+
+            if (this.club != null) {
+                if (getClub().equalsIgnoreCase("Barça") || getClub().equalsIgnoreCase("Madrid")) {
+                    preuInicial += 100;
+                }
             }
-            if (getJugador().equalsIgnoreCase("Ferran Torres") || getJugador().equalsIgnoreCase("Benzema")) {
-                preuInicial += 50;
+
+            if (this.jugador != null) {
+                if (getJugador().equalsIgnoreCase("Ferran Torres") || getJugador().equalsIgnoreCase("Benzema")) {
+                    preuInicial += 50;
+                }
             }
+
             return preuInicial;
         }
 
 
         public int calcularPuntuacio() {
             int punts = 5;
-            if (getCompeticio().equalsIgnoreCase("Lliga de campions")) {
-                punts += 3;
+
+            if (getCompeticio() != null) {
+                if (getCompeticio().equalsIgnoreCase("Lliga de campions")) {
+                    punts += 3;
+                }
+                if (getCompeticio().equalsIgnoreCase("Lliga")) {
+                    punts += 2;
+                }
             }
-            if (getCompeticio().equalsIgnoreCase("Lliga")) {
-                punts += 2;
+
+            if (getClub() != null) {
+                if (getClub().equalsIgnoreCase("Barça") || getClub().equalsIgnoreCase("Madrid")) {
+                    punts += 1;
+                }
             }
-            if (getClub().equalsIgnoreCase("Barça") || getClub().equalsIgnoreCase("Madrid")) {
-                punts += 1;
+
+            if (getJugador() != null) {
+                if (getJugador().equalsIgnoreCase("Ferran Torres") || getJugador().equalsIgnoreCase("Benzema")) {
+                    punts += 1;
+                }
             }
-            if (getJugador().equalsIgnoreCase("Ferran Torres") || getJugador().equalsIgnoreCase("Benzema")) {
-                punts += 1;
-            }
+
             return punts;
         }
 

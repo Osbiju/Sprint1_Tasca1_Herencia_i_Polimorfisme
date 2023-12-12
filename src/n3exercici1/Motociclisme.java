@@ -29,18 +29,26 @@ public class Motociclisme extends Noticia {
     //metodes generals
     public double calcularPreuNoticia() {
         int preuInicial = 100;
-        if (getEquip().equalsIgnoreCase("Honda") || getEquip().equalsIgnoreCase("Yamaha")) {
-            preuInicial += 50;
+
+        if (this.equip != null) {
+            if (getEquip().equalsIgnoreCase("Honda") || getEquip().equalsIgnoreCase("Yamaha")) {
+                preuInicial += 50;
+            }
         }
+
         return preuInicial;
     }
 
     @Override
     public int calcularPuntuacio() {
         int punts = 3;
-        if (getEquip().equalsIgnoreCase("Honda") || getEquip().equalsIgnoreCase("Yamaha")) {
-            punts += 3;
+
+        if (getEquip() != null) {
+            if (getEquip().equalsIgnoreCase("Honda") || getEquip().equalsIgnoreCase("Yamaha")) {
+                punts += 3;
+            }
         }
+
         return punts;
     }
 
