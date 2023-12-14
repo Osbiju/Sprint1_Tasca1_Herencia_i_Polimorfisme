@@ -1,6 +1,6 @@
 package n1exercici1;
 
-public class Corda extends Instruments {
+public class Corda extends Instrument {
     //atributs
     //constructor
     public Corda(String nom, float preu) {
