@@ -67,6 +67,8 @@ public class Main {
     public static String introduirRedactor() {
         String nom = "";
         String dni = "";
+        int contador = 0;
+
         System.out.println("Introdueix el nom: ");
         nom = entrada.next();
         System.out.println();
@@ -74,21 +76,29 @@ public class Main {
         dni = entrada.next();
         Redactor redactor = new Redactor(nom, dni);
         redactors.add(redactor);
-        return "Redactor amb nom: " + nom + ", amb dni: " + dni + ", ha sigut creat crrectament";
+
+        //per veure quants redactor es van crean
+        for (int i = 0; i < redactors.size(); i++){
+            contador++;
+        }
+
+        return "Redactor amb nom: " + nom + ", amb dni: " + dni + ", ha sigut creat crrectament" +
+                "\nNº de redactors afegits: " + contador + "\n";
     }
 
     public static String eliminarRedactor() {
         String dni = "";
-        String resposta = "Redactor no trobat";
+        String resposta = "Redactor no trobat\n";
         //boolean trobat = false;
 
-        System.out.println("Introdueix el nom DNI del redactor a eliminar:");
+        System.out.println("Introdueix el DNI del redactor a eliminar:");
         dni = entrada.next();
 
         for (Redactor redactor : redactors) {
             if (redactor.getDni().equals(dni)) {
                 int index = redactors.indexOf(redactor);
                 redactors.remove(index);
+
                 return "Redactor amb DNI: " + dni + ", ha sigut eliminat correctament";
             }
         }
@@ -199,6 +209,7 @@ public class Main {
 
         for (Redactor redactor : redactors) {
             if (redactor.getDni().equalsIgnoreCase(dni)) {
+
                 System.out.println("");
             }
 
