@@ -224,8 +224,9 @@ public class Main {
 
         for (Redactor redactor : redactors) {
             if (redactor.getDni().equalsIgnoreCase(dni)) {
+                //TODO eliminar noticia
 
-                System.out.println("");
+                System.out.println("La noticia ha sigut eliminada correctament");
             }
 
         }
