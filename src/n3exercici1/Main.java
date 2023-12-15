@@ -18,15 +18,7 @@ public class Main {
 
         //MENU
         do {
-            System.out.println("Introdueix l'opcio desitjada:" +
-                    "\n1. Introduir redactor" +
-                    "\n2. Eliminar redactor" +
-                    "\n3. Introduir noticia a un redactor" +
-                    "\n4. Eliminar noticia (es demana redactor i titular de la noticia" +
-                    "\n5. Moostrar totes les noticies per redactor" +
-                    "\n6. Calcular puntuacio de la noticia" +
-                    "\n7. Calcular preu-noticia" +
-                    "\n8. Sortit");
+            cridarMenu();
             opcio = entrada.nextInt();
             switch (opcio) {
                 case 1:
@@ -63,11 +55,23 @@ public class Main {
 
     }
 
+    private static void cridarMenu() {
+        System.out.println("Introdueix l'opcio desitjada:" +
+                "\n1. Introduir redactor" +
+                "\n2. Eliminar redactor" +
+                "\n3. Introduir noticia a un redactor" +
+                "\n4. Eliminar noticia (es demana redactor i titular de la noticia" +
+                "\n5. Moostrar totes les noticies per redactor" +
+                "\n6. Calcular puntuacio de la noticia" +
+                "\n7. Calcular preu-noticia" +
+                "\n8. Sortit");
+    }
+
 
     public static String introduirRedactor() {
         String nom = "";
         String dni = "";
-        int contador = 0;
+        int contador = 0; //TODO  fer q el contador resti 1 quan selimini un redactor
 
         System.out.println("Introdueix el nom: ");
         nom = entrada.next();
@@ -89,14 +93,16 @@ public class Main {
     public static String eliminarRedactor() {
         String dni = "";
         String resposta = "Redactor no trobat\n";
+        int index = 0;
         //boolean trobat = false;
+        //TODO crear contador i restar del contador quan elimini redactor
 
         System.out.println("Introdueix el DNI del redactor a eliminar:");
         dni = entrada.next();
 
         for (Redactor redactor : redactors) {
             if (redactor.getDni().equals(dni)) {
-                int index = redactors.indexOf(redactor);
+                index = redactors.indexOf(redactor);
                 redactors.remove(index);
 
                 return "Redactor amb DNI: " + dni + ", ha sigut eliminat correctament";
@@ -126,19 +132,28 @@ public class Main {
                 tipus = entrada.nextInt();
                 switch (tipus) {
                     case 1:
-                            System.out.println("Introdueix un titular: ");
-                            String titularFut = entrada.nextLine();
-                            entrada.nextLine();
-                            System.out.println("Competicio: ");
-                            String competicioFut = entrada.nextLine();
-                            System.out.println("Club: ");
-                            String clubFut = entrada.nextLine();
-                            System.out.println("Jugador: ");
-                            String jugadorFut = entrada.nextLine();
-                            Futbol noticiaFutbol = new Futbol(titularFut, competicioFut, clubFut, jugadorFut);
-                            redactor.asignarNoticia(noticiaFutbol);
-                            resposta = "Noticia de futbol afegida correctament al redactor amb dni " + dni;
-                            break;
+                        String titularFut = "";
+                        String competicioFut = "";
+                        String clubFut = "";
+                        String jugadorFut = "";
+
+                        System.out.println("Introdueix un titular: ");
+                        titularFut = entrada.nextLine();
+                        entrada.nextLine();
+                        
+                        System.out.println("Competicio: ");
+                        competicioFut = entrada.nextLine();
+                        
+                        System.out.println("Club: ");
+                        clubFut = entrada.nextLine();
+                        
+                        System.out.println("Jugador: ");
+                        jugadorFut = entrada.nextLine();
+                        
+                        Futbol noticiaFutbol = new Futbol(titularFut, competicioFut, clubFut, jugadorFut);
+                        redactor.asignarNoticia(noticiaFutbol);
+                        resposta = "Noticia de futbol afegida correctament al redactor amb dni " + dni;
+                        break;
                     case 2:
                         System.out.println("Introdueix les dades:" +
                                 "\nTitular: ");
@@ -218,6 +233,11 @@ public class Main {
     }
 
     private static String mostrarNoticies() {
+        String nomRedactor = "";
+
+        System.out.println("Introdueix el dni del redactor a mostrar noticia");
+        nomRedactor = entrada.nextLine();
+
         return "";
     }
 
