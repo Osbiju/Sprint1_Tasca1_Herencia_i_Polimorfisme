@@ -238,15 +238,18 @@ public class Main {
 
         System.out.println("Introdueix el dni del redactor a mostrar noticia");
         nomRedactor = entrada.nextLine();
+        //TODO
 
         return "";
     }
 
     private static String calcularPuntuacio() {
+        //TODO
         return "";
     }
 
     private static String calcularPreu() {
+        //TODO
         return "";
     }
 }

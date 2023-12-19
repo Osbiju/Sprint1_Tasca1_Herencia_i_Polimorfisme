@@ -3,8 +3,8 @@ package n3exercici1;
 public abstract class Noticia {
 
     //attributes
-    protected final String titular; //HABRIAN DE SER PROTECTED EN VEZ DE PRIVATE?, ha de ser protected para q loas subclases lo hereden
-    protected final String text = "";//NO SE SI INICIARLA AQUI O AL CONSTRUCTOR????????¿¿¿??? AQUIIIII, ES UNA CONSTANTE
+    protected String titular; //HABRIAN DE SER PROTECTED EN VEZ DE PRIVATE?, ha de ser protected para q loas subclases lo hereden
+    protected String text = "";//NO SE SI INICIARLA AQUI O AL CONSTRUCTOR????????¿¿¿??? AQUIIIII, ES UNA CONSTANTE
     protected final int puntuacio; //nunca cambiara tampoco una vez se crea no cambia
     protected final double preu;
 

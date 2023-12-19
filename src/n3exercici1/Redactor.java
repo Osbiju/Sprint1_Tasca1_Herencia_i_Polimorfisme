@@ -10,13 +10,15 @@ import java.util.ArrayList;
         private final ArrayList<Noticia> _noticias = new ArrayList<>();
         private final String nom;
         private final String dni;
-        private final int _sou = 1500; //se pone _. Quiere decir que no se va a utilizar fuera de la clase,
+        private final int _souBase = 1500; //se pone _. Quiere decir que no se va a utilizar fuera de la clase,
+        private int sou;
 
 
         //constructor
         public Redactor(String nom, String dni) {
             this.nom = nom;
             this.dni = dni;
+            this.sou = _souBase;
         }
 
 
